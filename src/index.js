@@ -1,27 +1,27 @@
 require('dotenv').config();
-const Discord = require('discord.js');
-const client = new Discord.Client();
-const prefix = 'kel!';
-const fs = require('fs');
+const { Client, Collection } = require('discord.js');
+const client = new Client();
+const prefix = require('../config');
+const { readdirSync } = require('fs');
 const Dokdo = require('dokdo');
 const DokdoHandler = new Dokdo(client, {
     prefix: prefix,
     aliases: ['dokdo', 'dok']
 });
-const { ErrorSend } = require('./utils/ErrorSend');
+const { AdminSend } = require('./utils/AdminSend');
+const package = require('../package.json');
 
-
-client.commands = new Discord.Collection();
+client.commands = new Collection();
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
+    client.user.setActivity(`${prefix}help | version: ${package.version}`);
 });
 
-
-const commandFolders = fs.readdirSync(__dirname + '/commands');
+const commandFolders = readdirSync(__dirname + '/commands');
 
 for (const folder of commandFolders) {
-    const commandFiles = fs.readdirSync(__dirname + `/commands/${folder}`).filter(file => file.endsWith('.js'));
+    const commandFiles = readdirSync(__dirname + `/commands/${folder}`).filter(file => file.endsWith('.js'));
     for (const file of commandFiles) {
         const command = require(__dirname + `/commands/${folder}/${file}`);
         client.commands.set(command.name, command);
@@ -30,6 +30,7 @@ for (const folder of commandFolders) {
 
 client.on('message', msg => {
     if (!msg.content.startsWith(prefix) || msg.author.bot) return;
+    if (msg.channel.type == 'dm') return;
     DokdoHandler.run(msg);
     const args = msg.content.slice(prefix.length).trim().split(/ +/);
     const commandName = args.shift().toLowerCase();
@@ -47,10 +48,9 @@ client.on('message', msg => {
 \`\`\`js
 ${error}\`\`\``;
         msg.reply(err);
-        ErrorSend(err);
+        AdminSend(err);
     }
     if (!client.commands.has(commandName)) return;
-
 });
 
 client.login(process.env.token);

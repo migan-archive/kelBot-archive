@@ -1,0 +1,34 @@
+const { MessageEmbed } = require('discord.js');
+const { AdminSend } = require('../../utils/AdminSend');
+
+module.exports = {
+    name: 'support',
+    aliases: ['문의'],
+    description: 'support',
+    execute: ({ msg, args, client }) => {
+        const text = args.join(' ');
+        if (!text) return msg.reply('Missing Arguments.');
+
+        const Embed = new MessageEmbed()
+            .setAuthor(client.user.username, client.user.displayAvatarURL())
+            .setTitle('Support Success')
+            .setColor('RANDOM')
+            .setDescription(`Support content: ${text}`)
+            .setTimestamp(Date.now())
+            .setFooter(client.user.username, client.user.displayAvatarURL());
+
+        const Embed1 = new MessageEmbed()
+            .setAuthor(client.user.username, client.user.displayAvatarURL())
+            .setTitle('Support')
+            .setColor('RANDOM')
+            .setDescription(`
+Support content: ${text}
+The author of the supports: ${msg.author.username}`)
+            .setTimestamp(Date.now())
+            .setFooter(client.user.username, client.user.displayAvatarURL());
+
+        msg.react('✅');
+        msg.channel.send(Embed)
+        AdminSend(Embed1);
+    }
+}
