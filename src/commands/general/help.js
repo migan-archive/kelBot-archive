@@ -11,6 +11,7 @@ module.exports = {
             .setTitle('Commands')
             .setColor('RANDOM')
             .setDescription(`prefix: \`\`${prefix}\`\``)
+            .setThumbnail(client.user.displayAvatarURL({ dynamic: true }))
             .addFields(
                 {
                     name: 'general',
@@ -23,6 +24,13 @@ support [문의]\`\`\``
                     value: `\`\`\`
 ping [핑]
 profile [프로필]\`\`\``
+                },
+                {
+                    name: 'management',
+                    value: `\`\`\`
+kick [킥]
+ban [밴]
+clear [청소]\`\`\``
                 }
             )
             .setTimestamp(Date.now())
