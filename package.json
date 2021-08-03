@@ -1,0 +1,17 @@
+{
+  "name": "kelbot",
+  "version": "1.0.0-alhpa.0",
+  "main": "src/index.js",
+  "repository": "https://github.com/siwoo131/kelBot.git",
+  "author": "siwoo131 <tigersiwoo131@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "dokdo": "^0.4.0",
+    "dotenv": "^10.0.0",
+    "nodemon": "^2.0.12"
+  },
+  "scripts": {
+    "start": "nodemon src"
+  }
+}
