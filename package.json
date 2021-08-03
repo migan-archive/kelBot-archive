@@ -1,10 +1,10 @@
 {
   "name": "kelbot",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "main": "src/index.js",
   "repository": "https://github.com/siwoo131/kelBot.git",
   "author": "siwoo131 <tigersiwoo131@gmail.com>",
-  "license": "MIT",
+  "license": "GPL-3.0",
   "dependencies": {
     "discord.js": "^12.5.3",
     "dokdo": "^0.4.0",

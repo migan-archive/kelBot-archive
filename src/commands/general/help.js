@@ -21,7 +21,8 @@ support [문의]\`\`\``
                 {
                     name: 'util',
                     value: `\`\`\`
-ping [핑]\`\`\``
+ping [핑]
+profile [프로필]\`\`\``
                 }
             )
             .setTimestamp(Date.now())
