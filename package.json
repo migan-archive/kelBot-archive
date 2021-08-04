@@ -4,16 +4,13 @@
   "main": "src/index.js",
   "repository": "https://github.com/siwoo131/kelBot.git",
   "author": "siwoo131 <tigersiwoo131@gmail.com>",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "dependencies": {
     "discord.js": "^12.5.3",
     "dokdo": "^0.4.0",
     "dotenv": "^10.0.0"
   },
   "scripts": {
-    "start": "nodemon src"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.12"
+    "start": "node src"
   }
 }
