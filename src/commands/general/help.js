@@ -31,6 +31,13 @@ profile [프로필]\`\`\``
 kick [킥]
 ban [밴]
 clear [청소]\`\`\``
+                },
+                {
+                    name: 'botmanagement',
+                    value: `\`\`\`
+reload
+load
+deload\`\`\``
                 }
             )
             .setTimestamp(Date.now())
