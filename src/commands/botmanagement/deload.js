@@ -1,6 +1,7 @@
 module.exports = {
     name: 'deload',
     description: 'command deload',
+    aliases: ['디로드'],
     execute: ({ msg, client, args }) => {
         if (msg.author.id !== '415135882006495242') return msg.reply('Your this Command cannot Use.');
         if (!args[0]) return msg.reply('Missing Arguments.');

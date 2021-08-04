@@ -3,6 +3,7 @@ const { MessageEmbed } = require('discord.js');
 module.exports = {
     name: "clear",
     aliases: ["청소"],
+    description: 'clear',
     execute: async ({ client, msg, args }) => {
         if (!msg.member.hasPermission("MANAGE_MESSAGES")) return msg.reply("Your this Command cannot Use.");
         if (!args[0]) return msg.reply("Missing Arguments.");

@@ -1,5 +1,5 @@
 const { MessageEmbed } = require('discord.js');
-const prefix = require('../../../config');
+const { prefix } = require('../../../config');
 
 module.exports = {
     name: 'help',
@@ -35,9 +35,9 @@ clear [청소]\`\`\``
                 {
                     name: 'botmanagement',
                     value: `\`\`\`
-reload
-load
-deload\`\`\``
+reload [리로드]
+load [로드]
+deload [디로드]\`\`\``
                 }
             )
             .setTimestamp(Date.now())

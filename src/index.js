@@ -1,12 +1,14 @@
 require('dotenv').config();
 const { Client, Collection } = require('discord.js');
 const client = new Client();
-const prefix = require('../config');
+const { prefix } = require('../config');
 const { readdirSync } = require('fs');
+const noPerm = require('./utils/noPerm');
 const Dokdo = require('dokdo');
 const DokdoHandler = new Dokdo(client, {
     prefix: prefix,
-    aliases: ['dokdo', 'dok']
+    aliases: ['dokdo', 'dok'],
+    noPerm: noPerm
 });
 const { AdminSend } = require('./utils/AdminSend');
 const package = require('../package.json');
