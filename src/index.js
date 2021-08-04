@@ -48,7 +48,8 @@ client.on('message', msg => {
         const err = `에러가 발생하여 개발자에게 자동 전송되었습니다.
 에러의 내용은 다음과 같습니다:
 \`\`\`js
-${error}\`\`\``;
+${error}\`\`\`
+사용한 커맨드: ${msg.content}`;
         msg.reply(err);
         AdminSend(err);
     }

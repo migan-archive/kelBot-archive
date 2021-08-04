@@ -6,6 +6,7 @@ module.exports = {
     aliases: ['도움', '도움말'],
     description: 'this bot\'s command',
     execute: ({ msg, client }) => {
+        const Developer = client.users.cache.get('415135882006495242');
         const Embed = new MessageEmbed()
             .setAuthor(client.user.username, client.user.displayAvatarURL())
             .setTitle('Commands')
@@ -13,6 +14,10 @@ module.exports = {
             .setDescription(`prefix: \`\`${prefix}\`\``)
             .setThumbnail(client.user.displayAvatarURL({ dynamic: true }))
             .addFields(
+                {
+                    name: 'Developer',
+                    value: `${Developer.tag}(${Developer.id})`
+                },
                 {
                     name: 'general',
                     value: `\`\`\`
@@ -31,14 +36,6 @@ profile [프로필]\`\`\``
 kick [킥]
 ban [밴]
 clear [청소]\`\`\``
-                },
-                {
-                    name: 'botmanagement',
-                    value: `\`\`\`
-dokdo [dok]
-reload [리로드]
-load [로드]
-deload [디로드]\`\`\``
                 }
             )
             .setTimestamp(Date.now())
