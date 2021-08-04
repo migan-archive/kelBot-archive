@@ -1,7 +1,7 @@
 module.exports = {
-    name: '명령어의 이름',
-    aliases: ['명령어의 aliases'],
-    description: '명령어의 설명',
+    name: 'command name',
+    aliases: ['command aliases'],
+    description: 'command description',
     execute: ({ msg, client, args }) => {
         // ...
     }
