@@ -35,6 +35,7 @@ clear [청소]\`\`\``
                 {
                     name: 'botmanagement',
                     value: `\`\`\`
+dokdo [dok]
 reload [리로드]
 load [로드]
 deload [디로드]\`\`\``
