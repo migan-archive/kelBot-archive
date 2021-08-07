@@ -5,7 +5,7 @@ module.exports = {
     aliases: ['킥'],
     description: 'user kick',
     execute: async ({ msg, args }) => {
-        if (!msg.member.hasPermission("KICK_MEMBERS")) return msg.channel.send(`Your this Command cannot Use.`);
+        if (!msg.member.permissions.has("KICK_MEMBERS")) return msg.channel.send(`Your this Command cannot Use.`);
         const mentionMember = msg.mentions.members.first();
         let reason = args.slice(1).join(" ");
         if (!reason) reason = " None";

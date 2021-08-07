@@ -12,6 +12,6 @@ module.exports = {
             .setDescription(`\`\`${client.ws.ping}\`\`ms`)
             .setTimestamp(Date.now())
             .setFooter(client.user.username, client.user.displayAvatarURL());
-        msg.channel.send(Embed);
+        msg.channel.send({ embeds: [Embed] });
     }
 };

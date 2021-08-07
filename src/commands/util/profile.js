@@ -15,27 +15,27 @@ module.exports = {
             .addFields(
                 {
                     name: 'Name',
-                    value: user.username
+                    value: `${user.username}`
                 },
                 {
                     name: 'CreatedTimestamp',
-                    value: new Date(user.createdTimestamp).toLocaleDateString('ko-KR', { timeZone: 'Asia/Seoul' })
+                    value: `${new Date(user.createdTimestamp).toLocaleDateString('ko-KR', { timeZone: 'Asia/Seoul' })}`
                 },
                 {
                     name: "ID",
-                    value: user.id
+                    value: `${user.id}`
                 },
                 {
                     name: "Status",
-                    value: user.presence.status
+                    value: 'Not currently supported'
                 },
                 {
                     name: "Bot",
-                    value: user.bot
+                    value: `${user.bot}`
                 }
             )
             .setTimestamp(Date.now())
             .setFooter(client.user.username, client.user.displayAvatarURL());
-        msg.channel.send(Embed);
+        msg.channel.send({ embeds: [Embed] });
     }
 }

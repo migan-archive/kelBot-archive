@@ -5,7 +5,7 @@ module.exports = {
     aliases: ['밴'],
     description: 'user ban',
     execute: async ({ msg, args }) => {
-        if (!msg.member.hasPermission("BAN_MEMBERS")) return msg.channel.send(`Your this Command cannot Use.`);
+        if (!msg.member.permissions.has("BAN_MEMBERS")) return msg.channel.send(`Your this Command cannot Use.`);
         const mentionMember = msg.mentions.members.first();
         let reason = args.slice(1).join(" ");
         if (!reason) reason = " None";

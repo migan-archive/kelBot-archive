@@ -1,6 +1,6 @@
 require('dotenv').config();
-const { Client, Collection } = require('discord.js');
-const client = new Client();
+const { Client, Collection, Intents } = require('discord.js');
+const client = new Client({ intents: ['GUILDS', 'GUILD_MESSAGES', 'DIRECT_MESSAGES'] });
 const { prefix } = require('../config');
 const { readdirSync } = require('fs');
 const noPerm = require('./utils/noPerm');
@@ -30,7 +30,10 @@ for (const folder of commandFolders) {
     }
 }
 
-client.on('message', msg => {
+client.on('messageCreate', msg => {
+    if (msg.content === 'TEST') {
+        AdminSend('TEST');
+    }
     if (!msg.content.startsWith(prefix) || msg.author.bot) return;
     if (msg.channel.type == 'dm') return;
     DokdoHandler.run(msg);

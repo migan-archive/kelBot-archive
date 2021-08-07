@@ -1,11 +1,13 @@
 const { MessageEmbed } = require('discord.js');
-const { AdminSend } = require('../../utils/AdminSend');
+// const { AdminSend } = require('../../utils/AdminSend');
+const config = require('../../../config')
 
 module.exports = {
     name: 'support',
     aliases: ['문의'],
     description: 'support',
-    execute: ({ msg, args, client }) => {
+    execute: async ({ msg, args, client }) => {
+        const admin = await client.users.fetch(config.admin);
         const text = args.join(' ');
         if (!text) return msg.reply('Missing Arguments.');
 
@@ -28,7 +30,7 @@ The author of the supports: ${msg.author.username}`)
             .setFooter(client.user.username, client.user.displayAvatarURL());
 
         msg.react('✅');
-        msg.channel.send(Embed)
-        AdminSend(Embed1);
+        msg.channel.send({ embeds: [Embed] });
+        admin.send({ embeds: [Embed1] });
     }
 }
