@@ -8,12 +8,11 @@
   "dependencies": {
     "discord.js": "^12.5.3",
     "dokdo": "^0.4.0",
-    "dotenv": "^10.0.0"
+    "dotenv": "^10.0.0",
+    "nodemon": "^2.0.12"
   },
   "scripts": {
     "start": "nodemon src"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.12"
-  }
+  "devDependencies": {}
 }
