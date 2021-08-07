@@ -19,6 +19,10 @@ module.exports = {
                     value: `${Developer.tag}(${Developer.id})`
                 },
                 {
+                    name: 'sorce code',
+                    value: '[stable code](https://github.com/siwoo131/kelBot/tree/stable)\n[main code](https://github.com/siwoo131/kelBot)'
+                },
+                {
                     name: 'general',
                     value: `\`\`\`
 help [도움, 도움말]
