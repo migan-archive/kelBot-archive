@@ -31,9 +31,6 @@ for (const folder of commandFolders) {
 }
 
 client.on('messageCreate', msg => {
-    if (msg.content === 'TEST') {
-        AdminSend('TEST');
-    }
     if (!msg.content.startsWith(prefix) || msg.author.bot) return;
     if (msg.channel.type == 'dm') return;
     DokdoHandler.run(msg);
