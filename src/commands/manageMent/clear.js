@@ -17,6 +17,7 @@ module.exports = {
         msg.channel.send({
             embeds: [
                 new MessageEmbed()
+                    .setAuthor(client.user.username, client.user.displayAvatarURL())
                     .setColor('RANDOM')
                     .setTitle("Clear")
                     .setDescription(`Manager ${msg.author.username} Chatting at the request of ${args[0]}has been deleted!`)

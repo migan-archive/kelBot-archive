@@ -1,12 +1,12 @@
 const { MessageEmbed } = require('discord.js');
-const { prefix } = require('../../../config');
+const { prefix, admin } = require('../../../config');
 
 module.exports = {
     name: 'help',
     aliases: ['도움', '도움말'],
     description: 'this bot\'s command',
     execute: ({ msg, client }) => {
-        const Developer = client.users.cache.get('415135882006495242');
+        const Developer = client.users.cache.get(admin);
         const Embed = new MessageEmbed()
             .setAuthor(client.user.username, client.user.displayAvatarURL())
             .setTitle('Commands')

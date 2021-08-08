@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { Client, Collection, Intents } = require('discord.js');
+const { Client, Collection } = require('discord.js');
 const client = new Client({ intents: ['GUILDS', 'GUILD_MESSAGES', 'DIRECT_MESSAGES'] });
 const { prefix } = require('../config');
 const { readdirSync } = require('fs');
@@ -11,13 +11,13 @@ const DokdoHandler = new Dokdo(client, {
     noPerm: noPerm
 });
 const { AdminSend } = require('./utils/AdminSend');
-const package = require('../package.json');
+const Version = require('../package.json').version;
 
 client.commands = new Collection();
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
-    client.user.setActivity(`${prefix}help | version: ${package.version}`);
+    client.user.setActivity(`${prefix}help | version: ${Version}`);
 });
 
 const commandFolders = readdirSync(__dirname + '/commands');
