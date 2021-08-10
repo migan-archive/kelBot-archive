@@ -14,5 +14,8 @@
   "scripts": {
     "start": "nodemon src"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "engines": {
+    "node": "16.6.1"
+  }
 }
