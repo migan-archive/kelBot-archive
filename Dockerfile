@@ -1,7 +1,10 @@
 FROM node:16.6.1
 
+RUN mkdir app
+WORKDIR /app
+COPY . .
 RUN yarn
 
-WORKDIR /home/node/app
+ENV SHELL=/bin/bash
 
 CMD ["yarn", "start"]
