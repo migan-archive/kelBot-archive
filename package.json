@@ -6,13 +6,12 @@
   "author": "siwoo131 <tigersiwoo131@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "discord.js": "^13.0.1",
-    "dokdo": "mome0320/dokdo#support-djs-v13",
-    "dotenv": "^10.0.0",
-    "nodemon": "^2.0.12"
+    "discord.js": "^13.1.0",
+    "dokdo": "^0.5.1",
+    "dotenv": "^10.0.0"
   },
   "scripts": {
-    "start": "nodemon src"
+    "start": "node src"
   },
   "devDependencies": {},
   "engines": {
